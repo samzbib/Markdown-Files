@@ -1,0 +1,36 @@
+---
+title: "Assignment_2_map"
+author: "Sam Zbib"
+date: "March 4, 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+
+
+## Slide with map
+
+```{r, eval = FALSE }
+library (leaflet)
+
+my_map <-leaflet() %>%
++  addTiles() %>%
+   addMarkers(lat=34.052464, lng= -84.239713, popup="Sam's Home") %>%
+   addControl ( html = format (Sys.Date(),"%A, %b %d %Y"))
++   
+my_map
+
+```
+
+
+
+
