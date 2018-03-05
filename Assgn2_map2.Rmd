@@ -1,0 +1,57 @@
+---
+title: "Assignment_2_map"
+author: "Sam Zbib"
+date: "March 4, 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+
+## Assignment 2  - Peer reviewed
+
+
+### Display Date as of today - 60 days (two months back) 
+
+
+### Display an interactive map with a popup for my home address.
+
+
+##  Code to setup the library and intialize the map 
+
+```{r, echo = TRUE  }
+library (leaflet)
+
+my_map <- leaflet() %>%
+   addTiles ()
+```
+
+
+## code to add a pop up for my home address and a time stamp for 60 days ago
+
+
+```{r, echo = TRUE  }
+my_map <- my_map  %>%
+    addMarkers(lat=34.052464, lng= -84.239713, popup="Sam Zbib's Home") %>%
+   addControl ( html = format (Sys.Date()-60,"%A, %b %d %Y"))
+
+
+```
+
+## Interactive  Map with Date timestamp 
+
+
+``` {r, echo = FALSE  }
+
+my_map
+
+```
+
